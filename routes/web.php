@@ -28,17 +28,23 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 });
 
 Route::get('/', function () {
+    // \App\User::create([
+    //     'name' => 'admin',
+    //     'email' =>'admin@admin.com',
+    //     'password' => bcrypt(123),
+    //     'email_verified_at' => Carbon\Carbon::now(),
 
-    \App\User::create([
-        'name' => rand() . 'test',
-        'email' => rand() . 'test@school.com',
-        'password' => bcrypt(123),
-        'email_verified_at' => Carbon\Carbon::now(),
-
-    ]);
+    // ]);
     return view('welcome');
 });
 
-Route::get('/test11',function () {
-    return view('admin.layouts.app');
-});
+
+
+
+
+
+Route::get('/home',function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
+
+Route::get('telegram', '\App\Notification\TelegramBot@buildRequestUrl');
