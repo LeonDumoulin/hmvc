@@ -39,6 +39,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test11',function () {
-    return view('admin.layouts.app');
+Route::get('/test11', function () {
+    return view('dashboard');
 });
