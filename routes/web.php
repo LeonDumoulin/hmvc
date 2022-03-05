@@ -43,8 +43,8 @@ Route::get('/', function () {
 
 
 
-Route::get('/home',function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+// Route::get('/home',function () {
+//     return view('admin.dashboard');
+// })->name('admin.dashboard');
 
-Route::get('telegram', '\App\Notification\TelegramBot@buildRequestUrl');
+// Route::get('telegram', '\App\Notification\TelegramBot@buildRequestUrl');

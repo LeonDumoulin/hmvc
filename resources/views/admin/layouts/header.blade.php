@@ -26,6 +26,8 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{asset('dashboard/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('dashboard/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-    
     <!--end::Global Stylesheets Bundle-->
+    <!--begin::Datatable(used by all pages)-->
+    <link href="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css"/>
+    <!--end::Datatable(used by all pages)-->
 </head>

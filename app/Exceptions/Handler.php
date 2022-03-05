@@ -38,9 +38,9 @@ class Handler extends ExceptionHandler
     public function report(Throwable $exception)
     {
         // if(env('APP_ENV' == 'production')){
-            if ($this->shouldReport($exception)) {
-                NotificationHandler::buildRequestUrl($exception); // sends an email
-            }
+            // if ($this->shouldReport($exception)) {
+            //     NotificationHandler::buildRequestUrl($exception); // sends an email
+            // }
         // }
         
         parent::report($exception);

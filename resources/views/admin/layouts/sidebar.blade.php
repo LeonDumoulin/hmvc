@@ -55,318 +55,82 @@
                 </div>
                 <div class="menu-item">
                     <div class="menu-content pt-8 pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Crafted</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">اﻹعدادات</span>
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="bi bi-archive fs-3"></i>
-										</span>
-										<span class="menu-title">Pages</span>
-										<span class="menu-arrow"></span>
-									</span>
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="bi bi-archive fs-3"></i>
+                        </span>
+                        <span class="menu-title">{{__('إعدادات الموقع')}}</span>
+                        <span class="menu-arrow"></span>
+                    </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">User Profile</span>
-												<span class="menu-arrow"></span>
-											</span>
-                            <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/user-profile/overview.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Overview</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Blog</span>
-												<span class="menu-arrow"></span>
-											</span>
-                            <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/blog/home.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Blog Home</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Pricing</span>
-												<span class="menu-arrow"></span>
-											</span>
-                            <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/pricing/pricing-1.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Pricing 1</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/pricing/pricing-2.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Pricing 2</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Careers</span>
-												<span class="menu-arrow"></span>
-											</span>
-                            <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/careers/list.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Careers List</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/careers/apply.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Careers Apply</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">FAQ</span>
-												<span class="menu-arrow"></span>
-											</span>
-                            <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/faq/classic.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Classic</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo13/dist/pages/faq/extended.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                        <span class="menu-title">Extended</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="menu-item">
                             <a class="menu-link" href="../../demo13/dist/pages/about.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
+                                <span class="menu-icon">
+                                    <i class="bi bi-archive fs-3"></i>
+                                </span>
                                 <span class="menu-title">About Us</span>
                             </a>
                         </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/pages/contact.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Contact Us</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/pages/team.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Our Team</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/pages/licenses.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Licenses</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/pages/sitemap.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Sitemap</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-content pt-8 pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="bi bi-patch-check fs-3"></i>
-										</span>
-										<span class="menu-title">Projects</span>
-										<span class="menu-arrow"></span>
-									</span>
-                    <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/list.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">My Projects</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/project.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">View Project</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/targets.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Targets</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/budget.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Budget</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/users.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Users</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/files.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Files</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/activity.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Activity</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/apps/projects/settings.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Settings</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <a class="menu-link" href="../../demo13/dist/apps/calendar.html">
-										<span class="menu-icon">
-											<i class="bi bi-calendar3-event fs-3"></i>
-										</span>
-                        <span class="menu-title">Calendar</span>
-                    </a>
-                </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="bi bi-layout-sidebar fs-3"></i>
-										</span>
-										<span class="menu-title">Aside</span>
-										<span class="menu-arrow"></span>
-									</span>
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="bi bi-people-fill fs-3"></i>
+                        </span>
+                        <span class="menu-title">{{__('إعدادات المستخدمين')}}</span>
+                        <span class="menu-arrow"></span>
+                    </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/layouts/aside/light.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Light Skin</span>
+                            <a class="menu-link" href="{{route('users.index')}}">
+                                <span class="menu-icon">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                </span>
+                                <span class="menu-title">{{__('المستخدمين')}}</span>
                             </a>
                         </div>
+                    </div>
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/layouts/aside/font-icons.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Font Icons</span>
+                            <a class="menu-link" href="../../demo13/dist/pages/about.html">
+                                <span class="menu-icon">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                </span>
+                                <span class="menu-title">{{__('الرتب')}}</span>
                             </a>
                         </div>
+                    </div>
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/layouts/aside/minimized.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Minimized</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="../../demo13/dist/layouts/aside/only-header.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-                                <span class="menu-title">Only Header</span>
+                            <a class="menu-link" href="../../demo13/dist/pages/about.html">
+                                <span class="menu-icon">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                </span>
+                                <span class="menu-title">{{__('الصلاحيات')}}</span>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo13/layout-builder.html" title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon">
-											<i class="bi bi-layers fs-3"></i>
-										</span>
-                        <span class="menu-title">Layout Builder</span>
+                    <a class="menu-link" href="{{route('admin.profile')}}">
+                        <span class="menu-icon">
+                            <i class="bi bi-person-circle fs-3"></i>
+                        </span>
+                        <span class="menu-title">{{__('إعدادات الحساب')}}</span>
                     </a>
                 </div>
+                
             </div>
             <!--end::Menu-->
         </div>
