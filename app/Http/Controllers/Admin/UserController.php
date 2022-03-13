@@ -234,10 +234,10 @@ class UserController extends Controller
         return redirect('manager/user');
     }
 
-    // public function getUsers(Request $request)
-    // {
-    //     $data = User::all();
-    //     return response()->json(['data' => $data]);
+    public function getUsers(Request $request)
+    {
+        $data = User::all();
+        return response()->json(['data' => $data]);
         
-    // }
+    }
 }

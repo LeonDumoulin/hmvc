@@ -107,6 +107,7 @@
         var conn = new WebSocket('ws://localhost:9788');
     conn.onmessage = function(e) { console.log(e.data); };
     conn.onopen = function(e) {
+        // conn.send(JSON.stringify({command: "register", userId: Math.random(1, 1000)}));
         conn.send(JSON.stringify({command: "subscribe", channel: "global"}));
 
 

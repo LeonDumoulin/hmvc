@@ -36,11 +36,11 @@
                     <th >#</th>
                     <th >{{__('إسم المستخدم')}}</th>
                     <th >{{__('البريد الإلكتروني')}}</th>
-                    <th >{{__('الصلاحيات')}}</th>
-                    <th >{{__('إجراء')}}</th>
+                    {{-- <th >{{__('الصلاحيات')}}</th> --}}
+                    {{-- <th >{{__('إجراء')}}</th> --}}
                 </tr>
                 </thead>
-                <tbody class="fw-bold">
+                {{-- <tbody class="fw-bold">
                     @foreach ($records as $record )
                     <tr>
                         <td class="text-canter">{{$record->id}}</td>
@@ -49,11 +49,11 @@
                         <td class="text-canter">
                             <div class="badge badge-success fw-bolder">Yesterday</div>
                             <div class="badge badge-success fw-bolder">Yesterday</div>
-                            <div class="badge badge-success fw-bolder">Yesterday</div>
+                            <div class="badge badge-success fw-bolder">Yesterday</div> --}}
                             {{-- @foreach($record->roles as $role)
                                                 
                                             @endforeach --}}
-                        </td>
+                        {{-- </td>
                         <td class="text-muted">
                             <a href="#" class="btn btn-light btn-active-light-primary btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">{{__('اجراء')}}
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
@@ -80,7 +80,7 @@
                         </td>
                     </tr>
                     @endforeach
-                </tbody>
+                </tbody> --}}
             </table>
         </div>
         <!--end::Datatable-->
@@ -88,7 +88,7 @@
 </div>
 
 @endsection
-{{-- @push('scripts')
+@push('scripts')
 <script>
 "use strict";
 
@@ -105,7 +105,7 @@ var KTDatatablesServerSide = function () {
             searchDelay: 500,
             processing: true,
             serverSide: true,
-            order: [[1, 'desc']],
+            // order: [1, 'desc'],
             stateSave: true,
             ajax: {
                 url: "{{route('admin.users.list')}}",

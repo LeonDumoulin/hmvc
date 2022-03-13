@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use OwenIt\Auditing\Models\Audit as Audit;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 
 // Admin Login
 Route::get('login', 'Auth\LoginController@index')->middleware(['guest:web'])->name('admin.login.view');
@@ -35,6 +34,12 @@ Route::group(['middleware' => []], function () {
     Route::get('/home',function () {
         return view('admin.home');
     })->name('admin.home');
+
+    // chat page
+    Route::get('/chat',function () {
+        // dd(Audit::all());
+        return view('admin.chat.index');
+    });
     
 });
 
