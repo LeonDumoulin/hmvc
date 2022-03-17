@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
-    use HasFactory;
+    // use HasFactory;
     protected $table = 'messages';
     public $timestamps = true;
     protected $fillable = [

@@ -48,4 +48,17 @@ class ProfileController extends Controller
         session()->flash('success', __('تم التعديل بنجاح'));
         return redirect()->back();
     }
+
+    public function updateTheme(Request $request)
+    {
+        if(auth()->user()->theme == 'dark'){
+            auth()->user()->theme = 'light';
+            auth()->user()->save();
+            return redirect()->back();
+        }else{
+            auth()->user()->theme = 'dark';
+            auth()->user()->save();
+            return redirect()->back();
+        }
+    }
 }

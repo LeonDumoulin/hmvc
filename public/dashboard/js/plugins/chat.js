@@ -22,7 +22,7 @@ class Chat {
     }
 
 
-    renderViewIn(socket, data) {  
+    renderViewIn(socket, data) {
         document.getElementById(this.textAreaID).addEventListener('keyup', event => {
             if (event.isComposing || event.keyCode == 13) {
                this.sendHelper(socket, data)
@@ -52,7 +52,7 @@ class Chat {
     msgInComponent(msg) {
         const htmlText = `<div class="d-flex justify-content-end mb-10">
                                     <div class="d-flex flex-column align-items-end">
-                                        <div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end" data-kt-element="message-text">${msg}</div>                                     
+                                        <div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end" data-kt-element="message-text">${msg}</div>
                                     </div>
                                 </div>
         `;
@@ -60,7 +60,7 @@ class Chat {
         const parser = new DOMParser();
         const parsedHtml = parser.parseFromString(htmlText, 'text/html');
         return parsedHtml.body.firstChild
-    
+
     }
 }
 

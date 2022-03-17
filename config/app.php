@@ -165,21 +165,19 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        OwenIt\Auditing\AuditingServiceProvider::class,
         /*
          * Application Service Providers...
          */
+
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
-        Spatie\Permission\PermissionServiceProvider::class,
-        OwenIt\Auditing\AuditingServiceProvider::class,
-
-        Modules\Customer\Providers\CustomerServiceProvider::class,
-
     ],
 
     /*
@@ -232,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'Module' => Nwidart\Modules\Facades\Module::class,
     ],
 
 ];

@@ -1,3 +1,5 @@
 {
-    "Customer": true
+    "Customer": true,
+    "User": true,
+    "Client": true
 }

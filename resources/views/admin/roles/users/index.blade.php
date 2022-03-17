@@ -48,7 +48,7 @@
                             <div class="badge badge-success fw-bolder">Yesterday</div>
                             <div class="badge badge-success fw-bolder">Yesterday</div>
                             {{-- @foreach($record->roles as $role)
-                                                
+
                                             @endforeach --}}
                         </td>
                         <td class="text-muted">
@@ -77,6 +77,7 @@
                         </td>
                     </tr>
                     @endforeach
+
                 </tbody>
             </table>
         </div>
@@ -186,7 +187,7 @@ var KTDatatablesServerSide = function () {
         });
     }
 
-    
+
     // Init toggle toolbar
     var initToggleToolbar = function () {
         // Toggle selected action toolbar
@@ -208,7 +209,7 @@ var KTDatatablesServerSide = function () {
         });
     }
 
-    
+
 
     // Public methods
     return {

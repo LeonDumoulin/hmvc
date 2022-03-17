@@ -1,9 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +11,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-
-
-Route::get('/test', 'customerMainController@index');
+Route::prefix('client')->group(function() {
+    Route::get('/', 'ClientController@index');
+});

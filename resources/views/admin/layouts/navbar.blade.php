@@ -2008,7 +2008,7 @@
             <!--begin::Toolbar wrapper-->
             <div class="topbar d-flex align-items-stretch flex-shrink-0">
                 <!--begin::Search-->
-                <div class="d-flex align-items-stretch">
+                {{-- <div class="d-flex align-items-stretch">
                     <!--begin::Search-->
                     <div id="kt_header_search" class="d-flex align-items-stretch" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
                         <!--begin::Search toggle-->
@@ -2748,7 +2748,7 @@
                         <!--end::Menu-->
                     </div>
                     <!--end::Search-->
-                </div>
+                </div> --}}
                 <!--end::Search-->
                 <!--begin::Activities-->
                 <div class="d-flex align-items-stretch">
@@ -3029,34 +3029,6 @@
                                         <!--end::Svg Icon--></a>
                                 </div>
                                 <!--end::View more-->
-                            </div>
-                            <!--end::Tab panel-->
-                            <!--begin::Tab panel-->
-                            <div class="tab-pane fade show active" id="kt_topbar_notifications_2" role="tabpanel">
-                                <!--begin::Wrapper-->
-                                <div class="d-flex flex-column px-9">
-                                    <!--begin::Section-->
-                                    <div class="pt-10 pb-0">
-                                        <!--begin::Title-->
-                                        <h3 class="text-dark text-center fw-bolder">Get Pro Access</h3>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="text-center text-gray-600 fw-bold pt-1">Outlines keep you honest. They stoping you from amazing poorly about drive</div>
-                                        <!--end::Text-->
-                                        <!--begin::Action-->
-                                        <div class="text-center mt-5 mb-9">
-                                            <a href="#" class="btn btn-sm btn-primary px-6" data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
-                                        </div>
-                                        <!--end::Action-->
-                                    </div>
-                                    <!--end::Section-->
-                                    <!--begin::Illustration-->
-                                    <div class="text-center px-4">
-                                        <img class="mw-100 mh-200px" alt="image" src="assets/media/illustrations/unitedpalms-1/1.png" />
-                                    </div>
-                                    <!--end::Illustration-->
-                                </div>
-                                <!--end::Wrapper-->
                             </div>
                             <!--end::Tab panel-->
                             <!--begin::Tab panel-->
@@ -3582,7 +3554,7 @@
                         <div class="menu-item px-5">
                             <div class="menu-content px-5">
                                 <label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_user_menu_dark_mode_toggle">
-                                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_user_menu_dark_mode_toggle" data-kt-url="../../demo13/dist/index.html" />
+                                    <input class="form-check-input w-30px h-20px" type="checkbox" name="theme" id="kt_user_menu_dark_mode_toggle" data-kt-url="{{route('admin.theme')}}" @if(auth()->user()->theme == 'dark') checked @endif/>
                                     <span class="pulse-ring ms-n1"></span>
                                     <span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
                                 </label>

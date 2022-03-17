@@ -16,18 +16,17 @@
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="{{asset('admin/media/logos/favicon.ico')}}" />
-    <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <!--end::Fonts-->
-    <!--begin::Page Vendor Stylesheets(used by this page)-->
-    <link href="{{asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <!--end::Page Vendor Stylesheets-->
-    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+
     <link href="{{asset('dashboard/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('dashboard/css/style.dark.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-    <!--end::Global Stylesheets Bundle-->
-    <!--begin::Datatable(used by all pages)-->
-    <link href="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css"/>
-    <!--end::Datatable(used by all pages)-->
+    @if(auth()->user() && auth()->user()->theme == 'light')
+        <link href="{{asset('dashboard/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('dashboard/plugins/custom/datatables/datatables.dark.bundle.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('dashboard/plugins/custom/fullcalendar/fullcalendar.dark.bundle.css')}}" rel="stylesheet" type="text/css" />
+    @else()
+        <link href="{{asset('dashboard/css/style.dark.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('dashboard/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
+
+    @endif
 </head>

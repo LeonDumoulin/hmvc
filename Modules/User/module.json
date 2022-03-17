@@ -1,11 +1,11 @@
 {
-    "name": "Customer",
-    "alias": "customer",
+    "name": "User",
+    "alias": "user",
     "description": "",
     "keywords": [],
     "priority": 0,
     "providers": [
-        
+        "Modules\\User\\Providers\\UserServiceProvider"
     ],
     "aliases": {},
     "files": [],

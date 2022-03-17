@@ -4,7 +4,10 @@ namespace Helper;
 
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
+
 use App\Models\Message;
+
+
 
 class NiSocket implements MessageComponentInterface
 {
@@ -21,6 +24,8 @@ class NiSocket implements MessageComponentInterface
         $this->userresources = [];
         echo 'Server Started';
     }
+
+
 
     /**
      * [onOpen description]
@@ -49,7 +54,9 @@ class NiSocket implements MessageComponentInterface
     public function onMessage(ConnectionInterface $conn, $msg)
     {
         echo $msg;
+
         $data = json_decode($msg);
+
         if (isset($data->command)) {
             switch ($data->command) {
                 case "subscribe":
@@ -70,19 +77,18 @@ class NiSocket implements MessageComponentInterface
                     }
                     break;
                 case "message":
-
                     // $this->userresources[$data->to]->send($data->message);
                     // $this->userresources[$conn->resourceId]->send('done');
-                    // Message::create([
-                    //     'sender_id' => $this->userresources[$data->from],
-                    //     'receiver_id'=>$this->userresources[$data->to],
-                    //     'message'=>$msg
-                    // ]);
                     if (isset($this->userresources[$data->to])) {
                         foreach ($this->userresources[$data->to] as $key => $resourceId) {
                             if (isset($this->users[$resourceId])) {
                                 $this->users[$resourceId]->send($msg);
                                 // $this->userresources[$conn->resourceId]->send('done');
+                                Message::create([
+                                    'sender_id' => $data->from,
+                                    'reciever_id'=>$data->to,
+                                    'message'=>$data->message
+                                ]);
                             }
                         }
                         // $conn->send(json_encode($this->userresources[$data->to]));
@@ -95,6 +101,9 @@ class NiSocket implements MessageComponentInterface
                     //         }
                     //     }
                     // }
+                    break;
+                case 'notification':
+
                     break;
                 case "register":
                     //
