@@ -45,10 +45,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
-            ->namespace($this->moduleNamespace)
+        Route::prefix('admin')
+            ->middleware('web')
+            ->namespace($this->moduleNamespace.'\Dashboard')
             ->group(module_path('User', '/Routes/web.php'));
     }
 
@@ -63,7 +65,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
             ->middleware('api')
-            ->namespace($this->moduleNamespace)
+            ->namespace($this->moduleNamespace.'\Api')
             ->group(module_path('User', '/Routes/api.php'));
     }
 }

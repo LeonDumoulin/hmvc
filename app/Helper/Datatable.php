@@ -1,8 +1,6 @@
 <?php
 namespace Helper;
 
-use App\User;
-
 class DataTable
 {
     public $columnsDefault = [];
