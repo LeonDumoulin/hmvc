@@ -7,15 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Modules\User\Entities\User;
 use Response;
-use Hash;
 use Auth;
 use Spatie\Permission\Models\Role;
 use DataTables;
+use Illuminate\Http\Response as HttpResponse;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public $model;
-    public $viewsDomain = 'admin.users.';
+    public $viewsDomain = 'user::';
 
     public function __construct()
     {
@@ -38,32 +40,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $records = User::where(function ($q) use ($request) {
-            if ($request->id) {
-                $q->where('id', $request->id);
-            } else {
-                if ($request->name) {
-                    $q->where(function ($q) use ($request) {
-                        $q->where('name', 'LIKE', '%' . $request->name . '%')
-                           ->orWhere('email', 'LIKE', '%' . $request->name . '%');
-                    });
-                }
-                if ($request->role_name) {
-                    $q->whereHas('roles', function ($q) use ($request) {
-                        $q->where('display_name', 'LIKE', '%' . $request->role_name . '%');
-                    });
-                }
-
-                if ($request->from) {
-                    $q->whereDate('created_at', '>=', Helper::convertDateTime($request->from));
-                }
-
-                if ($request->to) {
-                    $q->whereDate('created_at', '<=', Helper::convertDateTime($request->to));
-                }
-            }
-        })->paginate(10);
-        return $this->view('index', compact('records'));
+        return $this->view('index');
     }
 
     /**
@@ -74,7 +51,7 @@ class UserController extends Controller
     public function create(User $model)
     {
         $record = new User();
-        $roles = Role::all();
+        $roles = Role::pluck('name','id');
         return $this->view('create', compact('record', 'roles'));
 
     }
@@ -116,7 +93,7 @@ class UserController extends Controller
         // $user->assignRole($request->roles);
 
         session()->flash('success', __('تم الاضافة بنجاح'));
-        return redirect(route('users.index'));
+        return redirect(route('admin.users.index'));
     }
      /**
      * Display the specified resource.
@@ -140,7 +117,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $record = User::findOrFail($id);
-        $roles = Role::all();
+        $roles = Role::pluck('name','id');
         return $this->view('edit', compact('record', 'roles'));
     }
 
@@ -180,13 +157,12 @@ class UserController extends Controller
         if ($request->password) {
             $record->update(['password' => Hash::make($request->password)]);
         }
-
-        // if (count((array)$request->roles)) {
-        //     $record->syncRoles($request->roles);
-        // }
+        if (count((array)$request->roles)) {
+            $record->syncRoles($request->roles);
+        }
 
         session()->flash('success', __('تم التعديل بنجاح'));
-        return redirect(route('users.index'));
+        return redirect(route('admin.users.index'));
     }
 
     /**
@@ -212,7 +188,7 @@ class UserController extends Controller
             'id' => $id
         ];
 
-        return Response::json($data, 200);
+        return HttpResponse::json($data, 200);
     }
 
     public function activation($id)
@@ -220,7 +196,7 @@ class UserController extends Controller
         $record = User::findOrFail($id);
 
         if (auth('web')->user()->id == $record->id) {
-            session()->flash('fail', 'This email, you cannot deactivate it');
+            session()->flash('error', 'This email, you cannot deactivate it');
             return redirect('manager/user');
         }
         $activate = Helper::activation($record);
@@ -234,10 +210,4 @@ class UserController extends Controller
         return redirect('manager/user');
     }
 
-    public function getUsers(Request $request)
-    {
-        $data = User::all();
-        return response()->json(['data' => $data]);
-
-    }
 }

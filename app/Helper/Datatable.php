@@ -43,6 +43,10 @@ class DataTable
             $column = $_REQUEST['order'][0]['column'];
             $dir    = $_REQUEST['order'][0]['dir'];
             usort($data, function ($a, $b) use ($column, $dir) {
+                // convert str object to array
+                $a =  json_decode(json_encode($a), true);
+                $b =  json_decode(json_encode($b), true);
+
                 $a = array_slice($a, $column, 1);
                 $b = array_slice($b, $column, 1);
                 $a = array_pop($a);
@@ -144,7 +148,7 @@ class DataTable
 
     public function getJsonDecode()
     {
-        return ($this->dataTableData);
+        return (json_decode($this->dataTableData));
     }
 
     /**
@@ -169,7 +173,16 @@ class DataTable
 
     public function arraySearch($array, $keyword)
     {
+        // $a reference for array
         return array_filter($array, function ($a) use ($keyword) {
+            // search in index if it is array
+            foreach ($a as $value){
+                if(is_array($value))
+                {
+                    $value = json_encode($value);
+                    return (boolean) preg_grep("/$keyword/i", (array) $value);
+                }
+            }
             return (boolean) preg_grep("/$keyword/i", (array) $a);
         });
     }

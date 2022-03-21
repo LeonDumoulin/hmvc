@@ -4,9 +4,9 @@
         <!--begin::Options-->
         <div class="d-flex align-items-center mt-3">
             <!--begin::Option-->
-            @foreach ($options as $name => $value)
+            @foreach ($options as $key => $value)
                 <label class="form-check form-check-inline form-check-solid me-5 is-valid">
-                    <input class="form-check-input" name="{{$value}}[]" type="checkbox" value="{{$name}}">
+                    <input class="form-check-input" name="{{$name}}[]" type="checkbox" value="{{$key}}">
                     <span class="fw-bold ps-2 fs-6">{{$value}}</span>
                 </label>
             @endforeach

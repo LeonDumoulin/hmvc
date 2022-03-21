@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('theme',['dark','light'])->default('dark');
             $table->rememberToken();
+            $table->timestamp('last_seen')->nullable();
             $table->timestamps();
         });
 
@@ -45,16 +46,16 @@ class CreateUsersTable extends Migration
             'email_verified_at' => Carbon\Carbon::now(),
         ]);
 
-        // $userCount = 200;
-        // for ($i=0; $i < $userCount; $i++) {
-        //     User::create([
-        //         'name' => 'User'.$i,
-        //         'email' => 'user@gmail.com'.$i,
-        //         'email_verified_at' => now(),
-        //         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        //         'remember_token' => Str::random(10),
-        //     ]);
-        // }
+        $userCount = 200;
+        for ($i=0; $i < $userCount; $i++) {
+            User::create([
+                'name' => 'User'.$i,
+                'email' => 'user@gmail.com'.$i,
+                'email_verified_at' => now(),
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'remember_token' => Str::random(10),
+            ]);
+        }
         // Artisan::call("db:seed --class='Modules\User\Database\Seeders\UserDatabaseSeeder'");
     }
 

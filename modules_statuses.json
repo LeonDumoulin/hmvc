@@ -1,4 +1,8 @@
 {
     "User": true,
-    "Student": true
+    "Student": true,
+    "Logs": true,
+    "Authorization": true,
+    "Chat": true,
+    "Notification": true
 }

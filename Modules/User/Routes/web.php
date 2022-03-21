@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\User\Http\Controllers\Dashboard\Auth\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,30 +20,28 @@ Route::post('login','Auth\LoginController@login')->name('admin.login');
 // Admin Logout
 Route::any('logout', 'Auth\LoginController@logout')->name('admin.logout');
 
-Route::group(['middleware' => ['auth:web']], function () {
+Route::group(['middleware' => ['auth:web'],'as'=>'admin.'], function () {
     //home page
     Route::get('home',function(){
         return view('admin.home');
-    })->name('admin.home');
+    })->name('home');
     // profile
-    
-    Route::get('profile', 'Auth\ProfileController@updateProfileView')->name('admin.profile');
-    Route::post('profile', 'Auth\ProfileController@update')->name('admin.profile.post');
-    Route::get('theme', 'Auth\ProfileController@updateTheme')->name('admin.theme');
+
+    Route::get('profile', [ProfileController::class,'updateProfileView'])->name('profile');
+    Route::post('profile', [ProfileController::class,'update'])->name('profile.post');
+    Route::get('theme', [ProfileController::class,'updateTheme'])->name('theme');
 
     // users
-    Route::get('users/list', 'UserController@getUsers')->name('admin.users.list');
     Route::resource('users', 'UserController');
 
     // chat page
-    Route::get('/chat',function () {
-        // dd(Audit::all());
-        return view('admin.chat.index');
-    });
+    // Route::get('/chat',function () {
+    //     // dd(Audit::all());
+    //     return view('chat.index');
+    // });
 
 });
 
 
 
-Route::get('datatable','HomeController@index')->name('admin.datatable');
 

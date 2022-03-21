@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Modules\User\Entities\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('online-user', function(){
+    $users = User::select('*')
+    ->whereNotNull('last_seen')
+    ->orderBy('last_seen','DESC')
+    ->paginate(10);
+    dd($users);
+});
 
 
 
