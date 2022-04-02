@@ -5,6 +5,10 @@ namespace Helper;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
+use App\Models\Message;
+
+
+
 class NiSocket implements MessageComponentInterface
 {
     protected $clients;
@@ -48,7 +52,9 @@ class NiSocket implements MessageComponentInterface
     public function onMessage(ConnectionInterface $conn, $msg)
     {
         echo $msg;
+
         $data = json_decode($msg);
+
         if (isset($data->command)) {
             switch ($data->command) {
                 case "subscribe":
@@ -69,23 +75,33 @@ class NiSocket implements MessageComponentInterface
                     }
                     break;
                 case "message":
-                    //
+                    // $this->userresources[$data->to]->send($data->message);
+                    // $this->userresources[$conn->resourceId]->send('done');
                     if (isset($this->userresources[$data->to])) {
                         foreach ($this->userresources[$data->to] as $key => $resourceId) {
                             if (isset($this->users[$resourceId])) {
                                 $this->users[$resourceId]->send($msg);
+                                // $this->userresources[$conn->resourceId]->send('done');
+                                Message::create([
+                                    'sender_id' => $data->from,
+                                    'reciever_id'=>$data->to,
+                                    'message'=>$data->message
+                                ]);
                             }
                         }
-                        $conn->send(json_encode($this->userresources[$data->to]));
+                        // $conn->send(json_encode($this->userresources[$data->to]));
                     }
 
-                    if (isset($this->userresources[$data->from])) {
-                        foreach ($this->userresources[$data->from] as $key => $resourceId) {
-                            if (isset($this->users[$resourceId])  && $conn->resourceId != $resourceId) {
-                                $this->users[$resourceId]->send($msg);
-                            }
-                        }
-                    }
+                    // if (isset($this->userresources[$data->from])) {
+                    //     foreach ($this->userresources[$data->from] as $key => $resourceId) {
+                    //         if (isset($this->users[$resourceId])  && $conn->resourceId != $resourceId) {
+                    //             $this->users[$resourceId]->send($msg);
+                    //         }
+                    //     }
+                    // }
+                    break;
+                case 'notification':
+
                     break;
                 case "register":
                     //
@@ -99,8 +115,8 @@ class NiSocket implements MessageComponentInterface
                             $this->userresources[$data->userId][] = $conn->resourceId;
                         }
                     }
-                    $conn->send(json_encode($this->users));
-                    $conn->send(json_encode($this->userresources));
+                    // $conn->send(json_encode($this->users));
+                    // $conn->send(json_encode($this->userresources));
                     break;
                 default:
                     $example = array(
