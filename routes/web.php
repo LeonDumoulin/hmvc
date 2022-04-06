@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -25,20 +25,4 @@ Route::get('/clear-cache', function () {
 });
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
-});
-
-Route::get('/', function () {
-
-    \App\User::create([
-        'name' => rand() . 'test',
-        'email' => rand() . 'test@school.com',
-        'password' => bcrypt(123),
-        'email_verified_at' => Carbon\Carbon::now(),
-
-    ]);
-    return view('welcome');
-});
-
-Route::get('/test11', function () {
-    return view('dashboard');
 });
